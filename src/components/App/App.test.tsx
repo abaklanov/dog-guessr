@@ -3,13 +3,21 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 
 describe("App", () => {
-  it("shows the name of the app and logo", () => {
+  it("shows the header: name of the app, logo", () => {
     render(<App />);
     expect(screen.getByText("dog-guessr")).toBeInTheDocument();
     expect(screen.getByAltText("logo")).toBeInTheDocument();
   });
-  it("shows the current score", () => {
+  it("shows the main image for guessing", () => {
     render(<App />);
-    expect(screen.getByText("score: 0")).toBeInTheDocument();
+    expect(screen.getByAltText("main-image")).toBeInTheDocument();
+  });
+  it("shows four buttons to select an answer", () => {
+    render(<App />);
+    expect(screen.getAllByRole("guess-button").length).toBe(4);
+  });
+  it("shows the score in two places", () => {
+    render(<App />);
+    expect(screen.getAllByText("score: 0").length).toBe(2);
   });
 });
