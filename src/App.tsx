@@ -3,6 +3,7 @@ import clouds from './assets/clouds.png'
 import forest from './assets/forest.png'
 import ground from './assets/ground.png'
 import sun from './assets/sun.png'
+import CorgiIdle from './CorgiIdle.tsx'
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           alt=""
           className="absolute inset-x-0 -bottom-30 z-30 w-full"
         />
+        <CorgiIdle />
       </div>
       <h1 className="py-6 text-center text-3xl font-semibold tracking-tight">
         Dog Guessr
