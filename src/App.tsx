@@ -14,7 +14,8 @@ function App() {
         <p className="text-5xl">🐕</p>
         <h2 className="text-3xl font-semibold">Arvaa rotu kuvasta</h2>
         <p className="max-w-md text-stone-600">
-          React + Vite + Tailwind -pohja on valmis. Seuraavaksi peli tähän.
+          React + Vite + Tailwind + TypeScript -pohja on valmis. Seuraavaksi peli
+          tähän.
         </p>
         <button
           type="button"
