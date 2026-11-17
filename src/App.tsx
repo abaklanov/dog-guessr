@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import background from './assets/background.png'
 import clouds from './assets/clouds.png'
 import forest from './assets/forest.png'
 import ground from './assets/ground.png'
 import sun from './assets/sun.png'
-import CorgiIdle from './CorgiIdle.tsx'
+import Corgi from './Corgi.tsx'
 
 function App() {
+  const [isRunning, setIsRunning] = useState(false)
+
   return (
     <div className="flex w-full flex-col">
       <div className="relative flex h-[32.5rem] w-full flex-row flex-nowrap">
@@ -34,11 +37,18 @@ function App() {
           alt=""
           className="absolute inset-x-0 -bottom-30 z-30 w-full"
         />
-        <CorgiIdle />
+        <Corgi isRunning={isRunning} />
       </div>
-      <h1 className="py-6 text-center text-3xl font-semibold tracking-tight">
-        Dog Guessr
-      </h1>
+      <div className="flex flex-col items-center gap-4 py-6 mt-30">
+        <h1 className="text-3xl font-semibold tracking-tight">Dog Guessr</h1>
+        <button
+          type="button"
+          onClick={() => setIsRunning((current) => !current)}
+          className="rounded-xl bg-amber-500 px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-amber-600"
+        >
+          {isRunning ? 'Lopeta juoksu' : 'Aloita juoksu'}
+        </button>
+      </div>
     </div>
   )
 }
